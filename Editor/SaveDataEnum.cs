@@ -36,8 +36,8 @@ namespace EnumCreator.Editor
             {
                 if (GUILayout.Button("Save and Update Enum"))
                 {
-                    SaveJsonFile();
                     SaveEnumFile();
+                    SaveJsonFile();
                 }
                 if (GUILayout.Button("Save"))
                 {

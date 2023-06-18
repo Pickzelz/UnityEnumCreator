@@ -41,14 +41,25 @@ namespace EnumCreator.Editor
             AssetDatabase.Refresh();
         }
 
-        private void CreateEnumFile(string filePath)
-        {
-            File.Create(filePath);
-        }
+        // private void CreateEnumFile(string filePath)
+        // {
+        //     File.Create(filePath);
+        // }
 
         private void ReadAndReplaceContent(string filePath, string newContent)
         {
+            if (IsEnumPathChangedAndFileExists())
+            {
+                File.Delete(Path.Combine(_collections.CurrentEnumPath, _enumFileName));
+                _collections.CurrentEnumPath = _collections.EnumPath;
+            }
             File.WriteAllText(filePath, newContent);
+            
+        }
+
+        private bool IsEnumPathChangedAndFileExists()
+        {
+            return _collections.EnumPath != _collections.CurrentEnumPath && File.Exists($"{_collections.CurrentEnumPath}/{_enumFileName}");
         }
 
         private string CreateEnum()
