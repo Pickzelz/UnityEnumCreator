@@ -97,7 +97,13 @@ namespace EnumCreator.Editor
                 fixedWidth = 100
             });
             {
-                EditorGUILayout.LabelField("Name : ");
+                EditorGUILayout.LabelField("Name : ", new GUIStyle
+                {
+                    normal = new GUIStyleState
+                    {
+                        textColor = Color.black
+                    }
+                });
             }
             EditorGUILayout.EndHorizontal();
         }

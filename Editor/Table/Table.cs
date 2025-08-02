@@ -69,6 +69,7 @@ namespace EnumCreator.Editor
                 GUIStyle headerLabelStyle = new GUIStyle("Label");
                 headerLabelStyle.fontStyle = FontStyle.Bold;
                 headerLabelStyle.alignment = TextAnchor.MiddleCenter;
+                headerLabelStyle.normal.textColor = Color.black;
                 GUILayout.Label(value, headerLabelStyle);
             }
             EditorGUILayout.EndVertical();

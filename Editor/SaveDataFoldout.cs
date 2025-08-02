@@ -34,7 +34,10 @@ namespace EnumCreator.Editor
                 EnumCreatorExt.DrawBorder(body, Color.gray, 1,1,1,1);
                 EnumCreatorExt.DrawQuad(body, new Color(0.9f,0.9f,0.9f));
                 
-                GUILayout.Label("Enum Save Location");
+                GUILayout.Label("Enum Save Location", new GUIStyle
+                {   
+                    normal = new GUIStyleState() { textColor = Color.black },
+                });
                 DrawFilePathText();
             }
             EditorGUILayout.EndVertical();
